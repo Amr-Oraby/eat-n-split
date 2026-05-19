@@ -11,6 +11,7 @@ React · TypeScript · Vite
 ## Features
 
 - Add friends
+- Delete friends
 - Split bills
 - Track balances
 - Select and manage friends
