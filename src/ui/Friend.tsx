@@ -4,7 +4,7 @@ type Tfriend = { id: number; name: string; image: string; balance: number };
 
 type FriendProps = {
   friend: Tfriend;
-  selectFriend: Tfriend;
+  selectFriend: Tfriend | null;
   handleToggleSelect(friend: Tfriend): void;
   deleteFriend(id: number): void;
 };
