@@ -2,7 +2,12 @@ import AddFriendForm from "./AddFriendForm";
 import Button from "./Button";
 import Friend from "./Friend";
 
-type Tfriend = { id: number; name: string; image: string; balance: number };
+type Tfriend = {
+  id: number;
+  name: string;
+  image: string;
+  balance: number;
+};
 
 type SidebarProps = {
   friends: Tfriend[];
