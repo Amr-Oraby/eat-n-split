@@ -13,8 +13,8 @@ type SplitFormProps = {
 };
 
 function SplitForm({ selectFriend, handleBalance }: SplitFormProps) {
-  const [billVal, setBillVal] = useState<number | string>("");
-  const [userVal, setUserVal] = useState<number | string>("");
+  const [billVal, setBillVal] = useState<number>(0);
+  const [userVal, setUserVal] = useState<number>(0);
   const friendVal = billVal ? Number(billVal) - Number(userVal) : "";
   const [whoPays, setWhoPays] = useState("user");
 
@@ -32,14 +32,14 @@ function SplitForm({ selectFriend, handleBalance }: SplitFormProps) {
       <label>💰 Bill value</label>
       <input
         type="text"
-        value={billVal}
+        value={billVal == 0 ? "" : billVal}
         onChange={(e) => setBillVal(+e.target.value)}
       />
 
       <label>🧍‍♀️ Your expense</label>
       <input
         type="text"
-        value={userVal}
+        value={userVal === 0 ? "" : userVal}
         onChange={(e) =>
           setUserVal(+billVal >= +e.target.value ? +e.target.value : +userVal)
         }
