@@ -11,7 +11,7 @@ type Tfriend = {
 
 type SidebarProps = {
   friends: Tfriend[];
-  selectFriend: Tfriend;
+  selectFriend: Tfriend | null;
   showNewFriend: boolean;
   AddNewFriend(newFriend: Tfriend): void;
   toggleShow(): void;
