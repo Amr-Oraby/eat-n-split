@@ -8,9 +8,9 @@ type Tfriend = {
 };
 
 type AddFriendFormProps = {
-  AddNewFriend(newFriend: Tfriend): void;
+  handleAddFriend(newFriend: Tfriend): void;
 };
-function AddFriendForm({ AddNewFriend }: AddFriendFormProps) {
+function AddFriendForm({ handleAddFriend }: AddFriendFormProps) {
   const [name, setName] = useState("");
   const [image, setImg] = useState("https://i.pravatar.cc/48");
 
@@ -24,7 +24,7 @@ function AddFriendForm({ AddNewFriend }: AddFriendFormProps) {
       image: `${image}?=${id}`,
       balance: 0,
     };
-    AddNewFriend(newFriend);
+    handleAddFriend(newFriend);
   }
   return (
     <form className="form-add-friend" onSubmit={handleSubmit}>

@@ -6,14 +6,14 @@ type FriendProps = {
   friend: Tfriend;
   selectFriend: Tfriend | null;
   handleToggleSelect(friend: Tfriend): void;
-  deleteFriend(id: number): void;
+  handleDelete(id: number): void;
 };
 
 function Friend({
   friend,
   handleToggleSelect,
   selectFriend,
-  deleteFriend,
+  handleDelete,
 }: FriendProps) {
   let message;
   let color;
@@ -36,7 +36,7 @@ function Friend({
       <Button onClick={() => handleToggleSelect(friend)}>
         {selectFriend?.id === friend?.id ? "Close" : "Select"}
       </Button>
-      <button className="delBtn" onClick={() => deleteFriend(friend.id)}>
+      <button className="delBtn" onClick={() => handleDelete(friend.id)}>
         &times;
       </button>
     </li>

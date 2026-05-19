@@ -19,7 +19,7 @@ export function App() {
     setShowNewFriend((s) => !s);
   }
 
-  function AddNewFriend(friend: Tfriend) {
+  function handleAddFriend(friend: Tfriend) {
     setFriends((fs) => [...fs, friend]);
     setShowNewFriend(false);
   }
@@ -41,7 +41,7 @@ export function App() {
     setSelectFriend(null);
   }
 
-  function deleteFriend(id: number) {
+  function handleDelete(id: number) {
     setFriends((friends) => friends.filter((friend) => friend.id !== id));
   }
 
@@ -49,12 +49,12 @@ export function App() {
     <div className="app">
       <Sidebar
         friends={friends}
-        AddNewFriend={AddNewFriend}
+        handleAddFriend={handleAddFriend}
         showNewFriend={showNewFriend}
         selectFriend={selectFriend}
         toggleShow={toggleShow}
         handleToggleSelect={handleToggleSelect}
-        deleteFriend={deleteFriend}
+        handleDelete={handleDelete}
       />
       {selectFriend && (
         <SplitForm

@@ -13,20 +13,20 @@ type SidebarProps = {
   friends: Tfriend[];
   selectFriend: Tfriend | null;
   showNewFriend: boolean;
-  AddNewFriend(newFriend: Tfriend): void;
+  handleAddFriend(newFriend: Tfriend): void;
   toggleShow(): void;
   handleToggleSelect(friend: Tfriend): void;
-  deleteFriend(id: number): void;
+  handleDelete(id: number): void;
 };
 
 function Sidebar({
   friends,
-  AddNewFriend,
+  handleAddFriend,
   handleToggleSelect,
   selectFriend,
   showNewFriend,
   toggleShow,
-  deleteFriend,
+  handleDelete,
 }: SidebarProps) {
   return (
     <div className="sidebar">
@@ -36,13 +36,13 @@ function Sidebar({
             friend={friend}
             key={friend.id}
             selectFriend={selectFriend}
-            deleteFriend={deleteFriend}
+            handleDelete={handleDelete}
             handleToggleSelect={handleToggleSelect}
           />
         ))}
       </ul>
 
-      {showNewFriend && <AddFriendForm AddNewFriend={AddNewFriend} />}
+      {showNewFriend && <AddFriendForm handleAddFriend={handleAddFriend} />}
 
       <Button onClick={toggleShow}>
         {showNewFriend ? "Close" : "Add Friend"}
