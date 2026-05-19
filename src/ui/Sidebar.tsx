@@ -13,7 +13,7 @@ type SidebarProps = {
   friends: Tfriend[];
   selectFriend: Tfriend;
   showNewFriend: boolean;
-  AddNewFriend(): void;
+  AddNewFriend(newFriend: Tfriend): void;
   toggleShow(): void;
   handleToggleSelect(friend: Tfriend): void;
   deleteFriend(id: number): void;
